@@ -4,7 +4,7 @@ This script fetches all movies from a public list on IMDb, search each one on Yi
 Installation:
 
 1. Simply upload index.php, database_helper.php and default.html to your server.
-2. Open index.php (this will create the required table on the database).
+2. Open index.php on your web browser (this will create the required table on the database).
 3. Refresh the page, insert your IMDb's list id and click on "Generate URL".
 4. Use your custom URL on your torrent client to automate things and be happy :)
 

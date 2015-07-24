@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>IMDB-YIFY API</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<style>
+body{
+color:#222;
+font-family: 'Roboto', sans-serif;
+}
+	#list_id{
+		font-size:1.1em;
+		padding:3px;
+		margin-bottom:10px;
+	}
+	#quality{
+		cursor:pointer;
+		padding:3px;
+		margin-bottom:10px;
+	}
+	
+	#generated_url>p{
+		display:inline;
+		padding:5px;
+		background:#ddd;
+		line-height:2em;
+		font-size:1.2em;
+	}
+	#submit{
+		cursor:pointer;
+		padding:5px;
+	}
+</style>
+</head>
+
+<body>
+<form method="post" id="main">
+	<label for="list_id">IMDB public list ID:</label><br />
+	<input type="text" id="list_id" name="list_id" placeholder="e.g. ls005204213" autofocus><br />
+	<label for="quality">Quality:</label><br />
+	<select id="quality" name="quality">
+	  <option value="720p">720p</option>
+	  <option value="1080p">1080p</option>
+	</select><br/>
+	<input id="submit" type="submit" value="Gererate URL">
+</form>
+<pre id="generated_url"></pre>
+
+
+<script>
+$('#main').on('submit', function () {
+	if(!$("#list_id").val()){
+		alert('IMDB public list ID can\'t be null');
+		return false;
+	}
+	var string = location.href;
+	string += "?list_id="+$("#list_id").val().trim();
+	string += "&quality="+$("#quality").val();
+	$('#generated_url').html("<label>Your custom feed URL:</label><br/><p><a href='"+string+"' target='_self'>"+string+"</a></p>");
+	return false; // para cancelar o envio do formulario
+});
+
+</script>
+<p>This project is on <a href="https://github.com/erichlotto/IMDb-list-to-torrent-RSS">GitHub</a></p>
+
+</body>
+
+</html>

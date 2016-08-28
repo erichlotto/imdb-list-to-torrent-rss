@@ -113,7 +113,7 @@ function get_http_response_code($url) {
 
 function getYify($id){
 	error_log('Searching YIFI for new movie with ID '.$id);
-	$content = file_get_contents('https://yts.to/api/v2/list_movies.json?query_term='.$id.'&sort_by=seeds');
+	$content = file_get_contents('https://yts.ag/api/v2/list_movies.json?query_term='.$id.'&sort_by=seeds');
 	$content = json_decode($content, true);
 	return $content;
 	if($content[data][movie_count] <1)return('lesser than 1');

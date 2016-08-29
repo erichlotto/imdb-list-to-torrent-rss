@@ -9,4 +9,4 @@ Installation:
 4. Refresh the page, insert your IMDb's list id and click on "Generate URL".
 5. Use your custom URL on your torrent client to automate things and be happy :)
 
-If you don't have a server and just want to create your own RSS, you can use: http://erichlotto.com/api/imdb-yify/
+If you don't have a server and just want to create your own RSS, you can use: http://api.erichlotto.com/imdb-yify/
